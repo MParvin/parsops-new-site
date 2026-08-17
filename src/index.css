@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   ParsOps — "Corporate Trust" design tokens
+   Palette derives from the brand shield: deep ink navy (#0A1628),
+   trust blue (#3B82C4) and light sky blue (#93C5E8).
+   Typeface: Vazirmatn (400–800), loaded via Google Fonts.
+------------------------------------------------------------------- */
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  /* Ink — deep navy surfaces */
+  --color-ink-950: #050b16;
+  --color-ink-900: #0a1628;
+  --color-ink-800: #0e1d36;
+  --color-ink-700: #162a4a;
+  --color-ink-600: #1e3760;
+  --color-ink-500: #2c4b7a;
+
+  /* Trust — corporate blue scale */
+  --color-trust-50: #f0f6fc;
+  --color-trust-100: #dcebf6;
+  --color-trust-200: #bcd9ef;
+  --color-trust-300: #93c5e8;
+  --color-trust-400: #5a9bd5;
+  --color-trust-500: #3b82c4;
+  --color-trust-600: #2c69a6;
+  --color-trust-700: #265587;
+  --color-trust-800: #23496f;
+  --color-trust-900: #1f3c5c;
+  --color-trust-950: #15283c;
+
+  /* Paper — off-white surface */
+  --color-paper: #f6f8fb;
+
+  /* Radii — moderate sharpness, corporate precision */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Shadows — hairline + soft layered lift */
+  --shadow-card: 0 1px 2px rgb(10 22 40 / 0.04), 0 8px 24px rgb(10 22 40 / 0.06);
+  --shadow-lift: 0 2px 4px rgb(10 22 40 / 0.05), 0 16px 40px rgb(10 22 40 / 0.12);
+  --shadow-glow: 0 0 0 1px rgb(147 197 232 / 0.25), 0 8px 40px rgb(59 130 196 / 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-sans text-slate-600 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-trust-500/20 text-ink-900;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-trust-500);
+    outline-offset: 2px;
+  }
+}
+
+/* Blueprint-style hairlines for dark sections */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to left, rgb(147 197 232 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(147 197 232 / 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Blueprint-style hairlines for light sections */
+@utility bg-grid-soft {
+  background-image:
+    linear-gradient(to left, rgb(10 22 40 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(10 22 40 / 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Tabular figures for stats and numbers */
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
