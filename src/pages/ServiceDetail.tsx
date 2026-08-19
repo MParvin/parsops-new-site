@@ -2,11 +2,13 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check } from 'lucide-react';
 import type { ReactNode } from 'react';
 import CtaSection from '@/components/ui/CtaSection';
+import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { getServiceBySlug, services } from '@/data/services';
+import { site } from '@/data/site';
 
 function withBold(text: string, words?: string[]): ReactNode {
   const word = words?.[0];
@@ -127,6 +129,9 @@ export default function ServiceDetail() {
                       </li>
                     ))}
                   </ul>
+                  <Button href={site.surveyUrl} className="mt-6 w-full" size="lg">
+                    درخواست مشاورهٔ رایگان
+                  </Button>
                 </div>
               </Reveal>
             </aside>
