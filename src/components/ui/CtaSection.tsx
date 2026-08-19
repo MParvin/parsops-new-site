@@ -22,11 +22,11 @@ export default function CtaSection() {
           آماده‌اید زیرساخت خود را به سطح بعدی ببرید؟
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-slate-300">
-          در یک جلسهٔ رایگان دربارهٔ وضعیت فعلی، چالش‌ها و مسیر پیشنهادی شما گفتگو
-          می‌کنیم؛ بدون هزینه و بدون هیچ تعهدی.
+          در یک جلسه رایگان درباره وضعیت فعلی و مسیر پیشنهادی با شما صحبت
+          می‌کنیم.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button to="/contact" variant="inverse" size="lg">
+          <Button href={site.surveyUrl} variant="inverse" size="lg">
             درخواست مشاورهٔ رایگان
           </Button>
           <Button

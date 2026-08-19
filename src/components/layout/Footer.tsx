@@ -1,22 +1,25 @@
 import { Link } from 'react-router-dom';
-import { Clock, Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Headset, Clock, Github, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 import { Container } from '@/components/ui/Container';
 import { Logo } from '@/components/ui/Logo';
+import { TelegramIcon, WhatsAppIcon } from '@/components/ui/BrandIcons';
 import { services } from '@/data/services';
 import type { Service } from '@/data/services';
 import { navItems, site } from '@/data/site';
 
 const socials = [
+  { label: 'واتساپ', href: site.whatsappUrl, Icon: WhatsAppIcon },
+  { label: 'تلگرام', href: site.telegramUrl, Icon: TelegramIcon },
   { label: 'گیت‌هاب', href: 'https://github.com', Icon: Github },
   { label: 'لینکدین', href: 'https://linkedin.com', Icon: Linkedin },
-  { label: 'تلگرام', href: 'https://t.me', Icon: Send },
 ];
 
 const contactRows = [
   { label: 'ایمیل', value: site.email, Icon: Mail },
   { label: 'تلفن', value: site.phone, Icon: Phone },
   { label: 'نشانی', value: site.location, Icon: MapPin },
-  { label: 'ساعات کاری', value: site.hours, Icon: Clock },
+  { label: 'مشاوره', value: site.consultingHours, Icon: Clock },
+  { label: 'پشتیبانی فنی', value: site.supportHours, Icon: Headset },
 ];
 
 export default function Footer() {
@@ -27,8 +30,8 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Logo />
             <p className="mt-5 max-w-xs text-sm leading-7 text-slate-400">
-              ارائهٔ خدمات حرفه‌ای دواپس، طراحی زیرساخت ابری و داخلی، امنیت،
-              مهندسی پلتفرم و قابلیت اطمینان — با رویکردی شفاف و قابل‌اندازه‌گیری.
+              خدمات دواپس، طراحی زیرساخت ابری و On-Premise، امنیت و پایداری
+              سیستم — شفاف و قابل اندازه‌گیری.
             </p>
             <ul className="mt-6 flex items-center gap-2">
               {socials.map(({ label, href, Icon }) => (
@@ -104,7 +107,7 @@ export default function Footer() {
           <p>
             © 2026 پارس‌آپس — تمامی حقوق محفوظ است.
           </p>
-          <p>زیرساختی که می‌شود به آن اعتماد کرد.</p>
+          <p>{site.tagline}</p>
         </Container>
       </div>
     </footer>

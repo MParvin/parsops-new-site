@@ -7,13 +7,14 @@ import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ServiceCard } from '@/components/ui/ServiceCard';
 import { services } from '@/data/services';
+import { site } from '@/data/site';
 
 export default function Services() {
   return (
     <>
       <PageHero
         title="خدمات ما"
-        description="از اتوماسیون و زیرساخت تا امنیت و قابلیت اطمینان؛ مجموعه‌ای یکپارچه و قابل ترکیب از خدمات مهندسی، متناسب با بلوغ و نیاز سازمان شما."
+        description="از خودکارسازی و زیرساخت تا امنیت و پایداری سیستم. هر خدمت را جدا یا با هم، متناسب با نیاز سازمان خود انتخاب کنید."
         crumbs={[{ label: 'خدمات' }]}
       />
 
@@ -21,8 +22,8 @@ export default function Services() {
         <Container>
           <SectionHeading
             eyebrow="دسته‌بندی خدمات"
-            title="کاتالوگ کامل خدمات پارس‌آپس"
-            description="هر خدمت را به‌صورت مستقل یا به‌عنوان بخشی از یک تحول کامل انتخاب کنید. روی هر خدمت کلیک کنید تا جزئیات، قابلیت‌ها و خروجی‌ها را ببینید."
+            title="همه خدمات پارس‌آپس"
+            description="هر خدمت را جدا یا همراه با بقیه انتخاب کنید. روی هر مورد کلیک کنید تا جزئیات را ببینید."
           />
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -40,10 +41,10 @@ export default function Services() {
                   مطمئن نیستید از کجا شروع کنید؟
                 </h2>
                 <p className="mt-1.5 text-sm leading-7 text-slate-500">
-                  با یک ارزیابی رایگان وضعیت فعلی و بلوغ دواپس خود را می‌سنجیم و مسیر درست را پیشنهاد می‌دهیم.
+                  با یک ارزیابی رایگان وضعیت فعلی را می‌سنجیم و مسیر درست را پیشنهاد می‌دهیم.
                 </p>
               </div>
-              <Button to="/contact" className="shrink-0">
+              <Button href={site.surveyUrl} className="shrink-0">
                 ارزیابی رایگان
                 <ArrowLeft className="size-4" aria-hidden="true" />
               </Button>

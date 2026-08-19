@@ -13,8 +13,8 @@ export default function ServicesSection() {
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
             eyebrow="خدمات ما"
-            title="هر چیزی که برای تحویل و نگهداری نرم‌افزار نیاز دارید"
-            description="از اتوماسیون و زیرساخت تا امنیت و قابلیت اطمینان — مجموعه‌ای یکپارچه از خدمات مهندسی، قابل ترکیب و متناسب با بلوغ سازمان شما."
+            title="خدمات دواپس و زیرساخت"
+            description="از خودکارسازی و زیرساخت تا امنیت و پایداری سیستم. هر خدمت را جدا یا با هم، متناسب با نیاز سازمان خود انتخاب کنید."
           />
           <Reveal delay={120}>
             <Button to="/services" variant="outline" size="md" className="shrink-0">

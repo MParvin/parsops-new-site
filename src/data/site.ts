@@ -1,11 +1,15 @@
 export const site = {
   name: 'پارس‌آپس',
   nameEn: 'ParsOps',
-  tagline: 'زیرساخت امن و پایدار',
-  email: 'hello@parsops.io',
-  phone: '+98 21 9100 0000',
-  location: 'تهران، ایران',
-  hours: 'شنبه تا چهارشنبه، 9:00 تا 18:00',
+  tagline: 'همیشه در کنار شما',
+  email: 'info@parsops.com',
+  phone: '+98 911 98 911',
+  location: 'تهران، کارخانه نوآوری اکباتان',
+  consultingHours: 'شنبه تا چهارشنبه ساعت ۹ تا ۱۸',
+  supportHours: '۲۴ ساعت',
+  surveyUrl: 'https://survey.porsline.ir/s/otE0WwNl',
+  whatsappUrl: 'https://wa.me/9891198911',
+  telegramUrl: 'https://t.me/parsops',
 };
 
 export const navItems = [
@@ -16,8 +20,8 @@ export const navItems = [
 ];
 
 export const stats = [
-  { value: '12+', label: 'سال تجربهٔ فنی ترکیبی' },
-  { value: '85+', label: 'پروژهٔ موفق پیاده‌سازی' },
+  { value: '+۱۸', label: 'سال تجربهٔ فنی ترکیبی' },
+  { value: '۸۸', label: 'پروژهٔ موفق پیاده‌سازی' },
   { value: '99.9%', label: 'میانگین دسترس‌پذیری سرویس‌ها' },
   { value: '24/7', label: 'پایش و پشتیبانی مستمر' },
 ];
@@ -29,5 +33,6 @@ export const techKeywords = [
   'Kubernetes',
   'Observability',
   'FinOps',
-  'SRE',
+  'Security',
+  'SecOps',
 ];

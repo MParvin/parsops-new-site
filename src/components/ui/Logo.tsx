@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/cn';
+import { site } from '@/data/site';
 
 interface LogoProps {
   className?: string;
@@ -10,7 +11,7 @@ export function Logo({ className }: LogoProps) {
     <Link
       to="/"
       className={cn('group inline-flex items-center gap-2.5', className)}
-      aria-label="پارس‌آپس — صفحهٔ اصلی"
+      aria-label={`پارس‌آپس — ${site.tagline}`}
     >
       <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-ink-900 ring-1 ring-white/10 transition ring-offset-2 ring-offset-transparent group-hover:ring-trust-300/50">
         <svg width="22" height="22" viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -44,7 +45,7 @@ export function Logo({ className }: LogoProps) {
       <span className="flex flex-col leading-none">
         <span className="text-lg font-extrabold text-white">پارس‌آپس</span>
         <span className="mt-1 text-[10px] font-medium tracking-wide text-slate-400">
-          زیرساخت امن و پایدار
+          {site.tagline}
         </span>
       </span>
     </Link>

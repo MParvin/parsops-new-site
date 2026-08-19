@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { Logo } from '@/components/ui/Logo';
-import { navItems } from '@/data/site';
+import { navItems, site } from '@/data/site';
 import { useScrolled } from '@/hooks/useScroll';
 import { cn } from '@/lib/cn';
 
@@ -60,7 +60,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button to="/contact" size="sm">
+          <Button href={site.surveyUrl} size="sm">
             مشاورهٔ رایگان
           </Button>
         </div>
@@ -87,7 +87,7 @@ export default function Header() {
             <NavLinks onNavigate={() => setOpen(false)} />
             <div className="mt-3 border-t border-white/10 pt-4">
               <Button
-                to="/contact"
+                href={site.surveyUrl}
                 className="w-full"
                 onClick={() => setOpen(false)}
               >

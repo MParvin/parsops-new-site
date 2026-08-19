@@ -1,11 +1,28 @@
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check } from 'lucide-react';
+import type { ReactNode } from 'react';
 import CtaSection from '@/components/ui/CtaSection';
 import { Container } from '@/components/ui/Container';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { getServiceBySlug, services } from '@/data/services';
+
+function withBold(text: string, words?: string[]): ReactNode {
+  const word = words?.[0];
+  if (!word) return text;
+
+  const index = text.indexOf(word);
+  if (index < 0) return text;
+
+  return (
+    <>
+      {text.slice(0, index)}
+      <strong className="font-bold text-ink-900">{word}</strong>
+      {text.slice(index + word.length)}
+    </>
+  );
+}
 
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -62,7 +79,7 @@ export default function ServiceDetail() {
               </Reveal>
               <Reveal delay={80}>
                 <p className="mt-6 text-base leading-9 text-slate-600">
-                  {service.description}
+                  {withBold(service.description, service.boldInDescription)}
                 </p>
               </Reveal>
 
